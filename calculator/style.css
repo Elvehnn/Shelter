@@ -1,4 +1,4 @@
-body {
+gitbody {
   font-size: 20px;
 }
 .main {
@@ -39,6 +39,17 @@ body {
   cursor: pointer;
   transition: 0.1s all;
 }
+
+.clear-btn {
+  background-color: #ffad73;
+}
+
+sup {
+  font-size: 14px;
+  text-transform: lowercase;
+  vertical-align: 1.2em;
+}
+
 .btn-hover-red:hover {
   background-color: #d83e33;
   color: #f2f2f2;
