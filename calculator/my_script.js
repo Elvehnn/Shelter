@@ -112,17 +112,37 @@ function operationPress(op) {
     } else {
       memoryCurrentNumber = +localMemory;
     }
+    memoryCurrentNumber = Math.round(memoryCurrentNumber * 1000000000000000) / 1000000000000000;
     display.value = memoryCurrentNumber;
     memoryPendingOperation = op;
   }
 }   
 
 function decimalPress() {
-    console.log('клик по десятичной кнопке'); 
-}
+  let localDecimalMemory = display.value;
+  if (memoryNewNumber) {
+    localDecimalMemory = '0.';
+    memoryNewNumber = false;
+  } else {
+    if (localDecimalMemory.indexOf('.') === -1) {
+      localDecimalMemory += '.';
+    }
+  }
+  display.value = localDecimalMemory;
+} 
+
 
 function clearPress(id) {
-    console.log('клик по кнопке ' + id); 
+  if (id === 'ce') {
+    
+    display.value = '0';
+    memoryNewNumber = true;
+  } else if (id === 'c') {
+    display.value = '0';
+    memoryNewNumber = true;
+    memoryCurrentNumber = 0;
+    memoryPendingOperation = '';
+  }
 }
 
 
