@@ -93,6 +93,8 @@ function operationPress(op) {
                 memoryNewNumber = true;
                 memoryCurrentNumber = 0;
                 memoryPendingOperation = '';
+                memoryString = ''; 
+                display_memory.value = memoryString;
                 return;
               } else {
                 memoryCurrentNumber /= +localMemory;
@@ -108,15 +110,19 @@ function operationPress(op) {
                 memoryNewNumber = true;
                 memoryCurrentNumber = 0;
                 memoryPendingOperation = '';
+                memoryString = ''; 
+                display_memory.value = memoryString;
                 return;
               }
 
           } else if (memoryPendingOperation === 'n' +'\u221A'+ 'x') {
-              if (((+localMemory % 2 === 0) && memoryCurrentNumber <= 0) || localMemory === 0) {
+              if (((+localMemory % 2 === 0) && memoryCurrentNumber <= 0) || +localMemory === 0) {
                 display.value = 'ERROR';
                 memoryNewNumber = true;
                 memoryCurrentNumber = 0;
                 memoryPendingOperation = '';
+                memoryString = ''; 
+                display_memory.value = memoryString;
                 return;
               } else if ((+localMemory % 2 !== 0) && memoryCurrentNumber <= 0) {
                 memoryCurrentNumber = -1 * Math.round(Math.pow(Math.abs(memoryCurrentNumber), 1/(+localMemory)));
