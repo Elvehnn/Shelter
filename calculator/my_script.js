@@ -95,7 +95,7 @@ function operationPress(op) {
               if (+localMemory >= 1 || +localMemory === 0) {
                 memoryCurrentNumber = Math.pow(memoryCurrentNumber, +localMemory);
               } else if ((+localMemory > 0 || +localMemory < 1) && memoryCurrentNumber >= 0) {
-                memoryCurrentNumber = Math.pow(memoryCurrentNumber, +localMemory);
+                memoryCurrentNumber = Math.round(Math.pow(memoryCurrentNumber, +localMemory));
               } else {
                 display.value = 'ERROR';
                 memoryNewNumber = true;
@@ -120,13 +120,14 @@ function operationPress(op) {
           } else {
             memoryCurrentNumber = +localMemory; 
           }
-
         }
+        
         if (op === '\u221A') {
           memoryCurrentNumber = sqrtPress(memoryCurrentNumber);
           display.value = memoryCurrentNumber;
           return;
         };
+
         memoryCurrentNumber = Math.round(memoryCurrentNumber * 1000000000000000) / 1000000000000000;
         display.value = memoryCurrentNumber;
         memoryPendingOperation = op;
