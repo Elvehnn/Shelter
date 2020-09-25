@@ -12,10 +12,27 @@ gitbody {
   padding: 30px;
   border-radius: 6px;
 }
+
+.calc-display{
+  margin-top: 10px;
+}
+
+.display-memory {
+  width: 360px;
+  height: 30px;
+  margin: 0;
+  border-radius: 6px;
+  background-color: #444444;
+  color: #fff;
+  text-align: right;
+  font-size: 20px;
+  padding: 10px;
+}
+
 .calc-display-input {
   width: 360px;
   height: 60px;
-  margin: 20px 0;
+  margin: 5px 0 0 0;
   border-radius: 6px;
   background-color: #1d1d1d;
   color: #fff;
@@ -40,8 +57,21 @@ gitbody {
   transition: 0.1s all;
 }
 
+.clear {
+  margin-top: 10px;
+}
+
 .clear-btn {
   background-color: #ffad73;
+  width: 60px;
+  height: 45px;
+  font-size: 20px;
+  color: #666666;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.1s all;
 }
 
 sup {
@@ -103,6 +133,22 @@ button {
   input:-ms-input-placeholder {
     font-size: 28px;
   }
+
+  .display-memory {
+    width: 280px;
+  }
+  .display-memory[placeholder] {
+    font-size: 14px;
+  }
+  .display-memory:-moz-placeholder {
+    font-size: 14px;
+  }
+  .display-memory:-moz-placeholder {
+    font-size: 14px;
+  }
+  .display-memory:-ms-input-placeholder {
+    font-size: 14px;
+  }
   .btn {
     width: 64px;
   }
@@ -115,6 +161,9 @@ button {
     width: 280px;
   }
   .calc-display-input {
+    width: 260px;
+  }
+  .display-memory {
     width: 260px;
   }
   .btn {

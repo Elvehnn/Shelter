@@ -46,77 +46,72 @@ function numberPress(num) {
   }
  }
 
-// function operationPress(op) {
-//     let localMemory = display.value;
-//     if (memoryNewNumber && memoryPendingOperation !== '=') {
-//         display.value = memoryCurrentNumber;
-//       } else {
-//           memoryNewNumber = true;
-//           switch (op) {
-//               case '+':
-//                 // console.log('до' + memoryCurrentNumber);
-//                 memoryCurrentNumber = memoryCurrentNumber + (+localMemory);
-//                 console.log(memoryCurrentNumber);
-//                 break;
-//               case '-':
-//                 memoryCurrentNumber -= +localMemory;
-//                 break;
-//               case '*':
-//                 memoryCurrentNumber *= +localMemory;
-//                 break;
-//               case '/':
-//                 memoryCurrentNumber /= +localMemory;
-//                 break;
-//               case '^':
-//                 console.log( 'степень' );
-//                 break;
-//               case 'sqrt':
-//                 console.log( 'корень' );
-//                 break;
-//               case '=' :
-//                 console.log ('равно ');
-//                 memoryCurrentNumber = +localMemory;
-//                 console.log (localMemory);
-//                 break;
-//           }
-//         // console.log('после 2 ' + memoryCurrentNumber);
-//         display.value = memoryCurrentNumber;
-//         memoryPendingOperation = op;
-//       }
-//     }
-
 function operationPress(op) {
   let localMemory = display.value;
-  if (memoryNewNumber && memoryPendingOperation !== '=') {
+  if (op === '+/-' && memoryPendingOperation === '') {
+    memoryCurrentNumber = -(+localMemory);
     display.value = memoryCurrentNumber;
-    } else {
-    memoryNewNumber = true;
-    if (memoryPendingOperation === '+') {
-      memoryCurrentNumber += +localMemory;
-    } else if (memoryPendingOperation === '-') {
-      memoryCurrentNumber -= +localMemory;
-    } else if (memoryPendingOperation === '*') {
-      memoryCurrentNumber *= +localMemory;
-    } else if (memoryPendingOperation === '/') {
-      memoryCurrentNumber /= +localMemory;
-    } else if (memoryPendingOperation === 'Xn') {
-      // console.log('нажата операция степень ' + localMemory);
-      memoryCurrentNumber = Math.pow(memoryCurrentNumber, +localMemory);
-    } else if (memoryPendingOperation === '\u221A') {
-      // console.log('нажата операция корень ' + localMemory + 'степени');
-        // if (memoryCurrentNumber <= 0 || localMemory <= 0) {
-        //   display.value = 'невозможно';
-        // } else {
-          memoryCurrentNumber = Math.pow(memoryCurrentNumber, 1/(+localMemory));
-        // };      
-    } else {
-      memoryCurrentNumber = +localMemory;
-    }
-    memoryCurrentNumber = Math.round(memoryCurrentNumber * 1000000000000000) / 1000000000000000;
-    display.value = memoryCurrentNumber;
-    memoryPendingOperation = op;
+  } else if (op === '+/-' && memoryPendingOperation !== 0) {
+    localMemory = -display.value;
+    display.value = localMemory;
+  } else {
+      if (memoryNewNumber && memoryPendingOperation !== '=') {
+          display.value = memoryCurrentNumber;
+      } else {
+        memoryNewNumber = true;
+          if (memoryPendingOperation === '+') {
+            memoryCurrentNumber += +localMemory;
+          } else if (memoryPendingOperation === '-') {
+            memoryCurrentNumber -= +localMemory;
+          } else if (memoryPendingOperation === '*') {
+            memoryCurrentNumber *= +localMemory;
+          
+          } else if (memoryPendingOperation === '/') {
+              if (+localMemory == 0) {
+                display.value = 'ERROR';
+                memoryNewNumber = true;
+                memoryCurrentNumber = 0;
+                memoryPendingOperation = '';
+                return;
+              } else {
+                memoryCurrentNumber /= +localMemory;
+              }   
+
+          } else if (memoryPendingOperation === 'Xn') {
+              if (+localMemory >= 1 || +localMemory === 0) {
+                memoryCurrentNumber = Math.pow(memoryCurrentNumber, +localMemory);
+              } else if ((+localMemory > 0 || +localMemory < 1) && memoryCurrentNumber >= 0) {
+                memoryCurrentNumber = Math.pow(memoryCurrentNumber, +localMemory);
+              } else {
+                display.value = 'ERROR';
+                memoryNewNumber = true;
+                memoryCurrentNumber = 0;
+                memoryPendingOperation = '';
+                return;
+              }
+           
+          } else if (memoryPendingOperation === '\u221A') {
+              if (((+localMemory % 2 === 0) && memoryCurrentNumber <= 0) || localMemory === 0) {
+                display.value = 'ERROR';
+                memoryNewNumber = true;
+                memoryCurrentNumber = 0;
+                memoryPendingOperation = '';
+                return;
+              } else {
+                memoryCurrentNumber = Math.pow(memoryCurrentNumber, 1/(+localMemory));
+              }
+          } else {
+            memoryCurrentNumber = +localMemory; 
+          }
+           
+        
+        }
+        memoryCurrentNumber = Math.round(memoryCurrentNumber * 1000000000000000) / 1000000000000000;
+        display.value = memoryCurrentNumber;
+        memoryPendingOperation = op;
+      }
   }
-}   
+   
 
 function decimalPress() {
   let localDecimalMemory = display.value;

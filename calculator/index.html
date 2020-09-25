@@ -11,16 +11,22 @@
   <main class="main">
       <div class="calc">
         <div class="calc-display">
+          <input disabled type="text" id="display_memory" name="" placeholder="000000000000000000" class="display-memory">
           <input disabled type="text" id="display" name="" placeholder="000000000000000000" class="calc-display-input">
         </div>
         <div class="calc-buttons">
+          <div class="clear">
+            <button type="button" class="clear-btn btn-hover-red" id="ce">ce</button>
+            <button type="button" class="clear-btn btn-hover-red" id="c">c</button>
+         
+          </div>
           <table class="calc-table">
             <tr class="calc-buttons-row">
               <td>
-                <button type="button" class="clear-btn btn btn-hover-red" id="ce">ce</button>
+                <button type="button" class="operation btn btn-hover-orange">+/-</button>
               </td>
               <td>
-                <button type="button" class="clear-btn btn btn-hover-red" id="c">c</button>
+                
               </td>
               <td>
                 <button type="button" class="btn  btn-hover-orange" id="decimal">.</button>
