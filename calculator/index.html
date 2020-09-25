@@ -9,9 +9,25 @@
 
 <body>
   <main class="main">
+      <div class="annotation">
+        <p>Корень квадратный вычисляется одинарным нажатием после числа (базы):<br>
+          <span>число (база) => кнопка &#8730;</span><br><br>
+          При попытке вычислить квадратный корень из отрицательного числа калькулятор выдаст ошибку.<br><br>
+          Корень n-й степени из числа x набирать в следующей последовательности:<br>
+          <span>число (база) => кнопка <sup>n</sup>&#8730;x => степень => "равно"</span><br><br>
+          При отрицательной базе и нечетной степени корня или при нулевой степени калькулятор выдаст ошибку.<br><br>
+          N-ю степень числа x набирать в следующей последовательности:<br>
+          <span>число (база) => кнопка X<sup>n</sup> => степень => "равно"</span><br><br>
+          Изменение знака числа на противоположный набирать в следующей последовательности:<br>
+          <span>число (база) => кнопка "+/-" </span>
+
+
+
+        </p>
+      </div>
       <div class="calc">
         <div class="calc-display">
-          <input disabled type="text" id="display_memory" name="" placeholder="000000000000000000" class="display-memory">
+          <input type="text" id="display_memory" class="display-memory">
           <input disabled type="text" id="display" name="" placeholder="000000000000000000" class="calc-display-input">
         </div>
         <div class="calc-buttons">

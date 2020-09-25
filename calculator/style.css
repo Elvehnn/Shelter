@@ -6,8 +6,26 @@ gitbody {
   justify-content: center;
   padding-top: 40px;
 }
+
+.annotation {
+  width: 400px;
+  margin-right: 200px;
+  /* display: inline-block;
+  float: left; */
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #444444;
+  padding: 10px;
+}
+
+span {
+  font-weight: 600;
+}
+
 .calc {
   background-color: #1c93ee;
+  margin-right: 200px;
   width: 385px;
   padding: 30px;
   border-radius: 6px;
@@ -22,8 +40,8 @@ gitbody {
   height: 30px;
   margin: 0;
   border-radius: 6px;
-  background-color: #444444;
-  color: #fff;
+  background-color: #74b9ee;
+  color: #444444;
   text-align: right;
   font-size: 20px;
   padding: 10px;
@@ -75,9 +93,9 @@ gitbody {
 }
 
 sup {
-  font-size: 14px;
+  font-size: 10px;
   text-transform: lowercase;
-  vertical-align: 1.2em;
+  vertical-align: 0.7em;
 }
 
 .btn-hover-red:hover {

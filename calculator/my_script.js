@@ -7,7 +7,7 @@ const display = document.getElementById('display');
 
 let memoryCurrentNumber = 0;
 let memoryNewNumber = false;
-let memoryPendingOperation = '';
+let memoryPendingOperation, memoryString = '';
 
 for (let i = 0; i < numbers.length; i++) {
     let numberBtn = numbers[i];
@@ -59,20 +59,27 @@ function sqrtPress(сurrentNumber) {
 
 function operationPress(op) {
   let localMemory = display.value;
-
+  
   if (op === '+/-' && memoryPendingOperation === '') {
     memoryCurrentNumber = -(+localMemory);
     display.value = memoryCurrentNumber;
- 
   } else if (op === '+/-' && memoryPendingOperation !== 0) {
     localMemory = -display.value;
     display.value = localMemory;
-
   } else {
+      if (memoryString.length <= 18) {
+        memoryString += display.value + op;
+        display_memory.value = memoryString;
+      } else {
+        memoryString = ''; 
+        memoryString += display.value + op;
+        display_memory.value = memoryString;
+      }
       if (memoryNewNumber && memoryPendingOperation !== '=') {
           display.value = memoryCurrentNumber;
       } else {
-        memoryNewNumber = true;
+          memoryNewNumber = true;
+          
           if (memoryPendingOperation === '+') {
             memoryCurrentNumber += +localMemory;
           } else if (memoryPendingOperation === '-') {
@@ -119,6 +126,7 @@ function operationPress(op) {
               
           } else {
             memoryCurrentNumber = +localMemory; 
+            
           }
         }
         
@@ -127,10 +135,15 @@ function operationPress(op) {
           display.value = memoryCurrentNumber;
           return;
         };
-
-        memoryCurrentNumber = Math.round(memoryCurrentNumber * 1000000000000000) / 1000000000000000;
+        
+        memoryCurrentNumber = Math.round(memoryCurrentNumber * 1000000000) / 1000000000;
+        
         display.value = memoryCurrentNumber;
+        // memoryString = '';
+        // memoryString += display.value;
+        // console.log(memoryString);
         memoryPendingOperation = op;
+       
       }
   }
    
@@ -150,6 +163,7 @@ function decimalPress() {
 
 
 function clearPress(id) {
+  display_memory.value = '';
   if (id === 'ce') {
     
     display.value = '0';
