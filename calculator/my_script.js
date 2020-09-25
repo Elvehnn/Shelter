@@ -16,21 +16,21 @@ for (let i = 0; i < numbers.length; i++) {
     });
   }
   
-  for (let i = 0; i < operations.length; i++) {
+for (let i = 0; i < operations.length; i++) {
     let operationBtn = operations[i];
     operationBtn.addEventListener('click', function (e) {
      operationPress(e.target.textContent);
     });
   }
   
-  for (let i = 0; i < clearBtns.length; i++) {
+for (let i = 0; i < clearBtns.length; i++) {
     let clearBtn = clearBtns[i];
     clearBtn.addEventListener('click', function (e) {
       clearPress(e.target.textContent);
     });
   }
 
-  decimalBtn.addEventListener('click', decimalPress);
+decimalBtn.addEventListener('click', decimalPress);
   
 
 function numberPress(num) {
@@ -44,16 +44,30 @@ function numberPress(num) {
       display.value += num;
     }
   }
- }
+}
+
+function sqrtPress(сurrentNumber) {
+    if (сurrentNumber > 0) {
+      сurrentNumber = Math.sqrt(сurrentNumber);
+      return(сurrentNumber);
+    }
+    else {
+      сurrentNumber = 'ERROR';
+      return(сurrentNumber);  
+    }
+}
 
 function operationPress(op) {
   let localMemory = display.value;
+
   if (op === '+/-' && memoryPendingOperation === '') {
     memoryCurrentNumber = -(+localMemory);
     display.value = memoryCurrentNumber;
+ 
   } else if (op === '+/-' && memoryPendingOperation !== 0) {
     localMemory = -display.value;
     display.value = localMemory;
+
   } else {
       if (memoryNewNumber && memoryPendingOperation !== '=') {
           display.value = memoryCurrentNumber;
@@ -89,23 +103,30 @@ function operationPress(op) {
                 memoryPendingOperation = '';
                 return;
               }
-           
-          } else if (memoryPendingOperation === '\u221A') {
+
+          } else if (memoryPendingOperation === 'n' +'\u221A'+ 'x') {
               if (((+localMemory % 2 === 0) && memoryCurrentNumber <= 0) || localMemory === 0) {
                 display.value = 'ERROR';
                 memoryNewNumber = true;
                 memoryCurrentNumber = 0;
                 memoryPendingOperation = '';
                 return;
+              } else if ((+localMemory % 2 !== 0) && memoryCurrentNumber <= 0) {
+                memoryCurrentNumber = -1 * Math.round(Math.pow(Math.abs(memoryCurrentNumber), 1/(+localMemory)));
               } else {
-                memoryCurrentNumber = Math.pow(memoryCurrentNumber, 1/(+localMemory));
+                memoryCurrentNumber = Math.round(Math.pow(memoryCurrentNumber, 1/(+localMemory)));
               }
+              
           } else {
             memoryCurrentNumber = +localMemory; 
           }
-           
-        
+
         }
+        if (op === '\u221A') {
+          memoryCurrentNumber = sqrtPress(memoryCurrentNumber);
+          display.value = memoryCurrentNumber;
+          return;
+        };
         memoryCurrentNumber = Math.round(memoryCurrentNumber * 1000000000000000) / 1000000000000000;
         display.value = memoryCurrentNumber;
         memoryPendingOperation = op;
