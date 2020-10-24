@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="mainstyles.css">
     </head>
     <body>
+    <!-- <div class="page__wrap"> -->
     <!--Header с логотипом и главным меню-->
       <header class="header">
         <h1 class="visually-hidden">Cozy House</h1>
@@ -31,21 +32,24 @@
         <section class="hero">
           <div class="hero__wrapper">
             <div class="hero-content">
-              <h2 class="hero-title"> Not only people need a house</h2>
+              <h2 class="hero-title">
+                <span>Not only people</span>
+                <span>need a house</span> 
+              </h2>
               <p class="hero-subtitle">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!
               </p>
               <button type="hero-button" class="hero__button">Make a friend</button>
             </div>
             <div class="hero-img">
-              <img src="..\..\assets\start-screen-puppy.png" alt="Hero-puppy">
+              <img class="hero__img__content" src="..\..\assets\start-screen-puppy.png" alt="Hero-puppy">
             </div>
           </div>
         </section>
         
         <section class="about">
           <div class="about__wrapper">
-            <div class="about__img">
-              <img src="..\..\assets\about-pets.png" alt="About-pets">
+            <div class="about__img__container">
+              <img class="about__img" src="..\..\assets\about-pets.png" alt="About-pets">
             </div>
             <div class="about__content">
               <h3 class="about__title">About the shelter “Cozy House”</h3>
@@ -59,7 +63,10 @@
       
         <section class="friends">
           <div class="friends__wrapper">
-            <h3 class="friends__title">Our friends who<br> are looking for a house</h3>
+            <h3 class="friends__title">
+              <span>Our friends who<br></span>
+              <span>are looking for a house</span> 
+            </h3>
             <div class="friends__img__wrapper">
               <button type="button" class="pet__slider__arrow arrow__left"><img src="..\..\assets\icons\arrow.svg" alt="slider_arrow_left"></button>
               <div class="pet__card">
@@ -67,12 +74,12 @@
                 <p class="pet__card__title">Katrine</p>
                 <button type="button" class="pet__card__button">Learn more</button>
               </div>
-              <div class="pet__card">
+              <div class="pet__card pet__mobile">
                 <div class="pet__picture"><img src="..\..\assets\pets-jennifer.png" alt="pets-cat-katrine"></div>
                 <p class="pet__card__title">Jennifer</p>
                 <button type="button" class="pet__card__button">Learn more</button>
               </div>
-              <div class="pet__card">
+              <div class="pet__card pet__tablet">
                 <div class="pet__picture"><img src="..\..\assets\pets-woody.png" alt="pets-cat-katrine"></div>
                 <p class="pet__card__title">Woody</p>
                 <button type="button" class="pet__card__button">Learn more</button>
@@ -86,43 +93,46 @@
 
         <section class="help">
           <div class="help__wrapper">
-            <h3 class="help__title">How you can help <br>our shelter</h3>
+            <h3 class="help__title">
+              <span>How you can help</span> 
+              <span>our shelter</span> 
+            </h3>
             <div class="icons__wrapper">
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\pet-food.svg" alt="pet-food" width="60" height="60">
-                <p class="icons__title">Pet food</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\pet-food.svg" alt="pet-food" width="60" height="60">
+                <h4 class="icons__title">Pet food</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\transportation.svg" alt="transportation" width="60" height="60">
-                <p class="icons__title">Transportation</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\transportation.svg" alt="transportation" width="60" height="60">
+                <h4 class="icons__title">Transportation</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\toys.svg" alt="toys" width="60" height="60">
-                <p class="icons__title">Toys</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\toys.svg" alt="toys" width="60" height="60">
+                <h4 class="icons__title">Toys</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\bowl.svg" alt="bowl" width="60" height="60">
-                <p class="icons__title">Bowls and cups</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\bowl.svg" alt="bowl" width="60" height="60">
+                <h4 class="icons__title">Bowls and cups</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\shampoo.svg" alt="shampoo" width="60" height="60">
-                <p class="icons__title">Shampoos</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\shampoo.svg" alt="shampoo" width="60" height="60">
+                <h4 class="icons__title">Shampoos</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\vitamins.svg" alt="vitamins" width="60" height="60">
-                <p class="icons__title">Vitamins</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\vitamins.svg" alt="vitamins" width="60" height="60">
+                <h4 class="icons__title">Vitamins</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\medicines.svg" alt="medicines" width="60" height="60">
-                <p class="icons__title">Medicines</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\medicines.svg" alt="medicines" width="60" height="60">
+                <h4 class="icons__title">Medicines</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\collars.svg" alt="collars/leashes" width="60" height="60">
-                <p class="icons__title">Collars / leashes</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\collars.svg" alt="collars/leashes" width="60" height="60">
+                <h4 class="icons__title">Collars / leashes</h4>
               </div>
               <div class="icons__item_container">
-                <img src="..\..\assets\icons\help\sleeping-area.svg" alt="sleeping-area" width="60" height="60">
-                <p class="icons__title">Sleeping areas</p>
+                <img class="icons__item__img" src="..\..\assets\icons\help\sleeping-area.svg" alt="sleeping-area" width="60" height="60">
+                <h4 class="icons__title">Sleeping areas</h4>
               </div>            
             </div>  
           </div>
@@ -130,11 +140,14 @@
 
         <section class="donation">
           <div class="donation__wrapper">
-            <div class="donation__img">
-              <img src="..\..\assets\donation-dog.png" alt="donation-pet">
+            <div class="donation__img__container">
+              <img class="donation__img" src="..\..\assets\donation-dog.png" alt="donation-pet">
             </div>
             <div class="donation__content">
-              <h3 class="donation__title">You can also make a donation</h3>
+              <h3 class="donation__title">
+                <span>You can also</span> 
+                <span>make a donation</span> 
+              </h3>
               <h5 class="donation__subtitle">Name of the bank / Type of bank account
               </h5>
               <div class="donation__card">
@@ -152,7 +165,10 @@
         <div class="footer__wrapper">
           <div class="footer_content">
             <div class="footer__contact">
-              <h3 class="footer__title">For questions and suggestions</h3>
+              <h3 class="footer__title">
+                <span>For questions</span> 
+                <span>and suggestions</span> 
+              </h3>
               <div class="footer__email">
                 <a href="mailto:email@shelter.com" target="_blank" class="footer__link"><img class="footer__icon" src="..\..\assets\icons\mail.svg" alt="e-mail"></a>
                 <h4><a href="mailto:email@shelter.com" target="_blank" class="footer__link">email@shelter.com</a></h4>
@@ -163,7 +179,10 @@
               </div>
             </div>
             <div class="footer__location">
-              <h3 class="footer__title">We are waiting for your visit</h3>
+              <h3 class="footer__title">
+                <span>We are waiting</span>
+                <span>for your visit</span> 
+              </h3>
               <div class="footer__address">
                 <a href="https://www.google.ru/maps/place/1+Central+St,+Boston,+MA+02109,+%D0%A1%D0%A8%D0%90/@42.3585519,-71.056915,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370868bc2ce7b:0x82fa7db94f5fea9e!8m2!3d42.3585519!4d-71.0547263" target="_blank" class="footer__link"><img class="footer__icon" src="..\..\assets\icons\pin.svg" alt="address1"></a>
                 <h4><a href="https://www.google.ru/maps/place/1+Central+St,+Boston,+MA+02109,+%D0%A1%D0%A8%D0%90/@42.3585519,-71.056915,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370868bc2ce7b:0x82fa7db94f5fea9e!8m2!3d42.3585519!4d-71.0547263" target="_blank" class="footer__link">1 Central Street, Boston (entrance from the store)</a></h4>
@@ -174,11 +193,11 @@
               </div>  
             </div>
           </div>
-          <div >
+          <div class="footer__img__container">
             <img class="footer__img" src="..\..\assets\footer-puppy (1).png" alt="footer-puppy">
           </div>
         </div>
       </footer>
-        
+    <!-- </div>      -->
     </body>
 </html>
