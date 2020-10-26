@@ -450,6 +450,9 @@ button:hover {
   font-size: 12px;
   line-height: 150%;
 }
+.donation__card:hover {
+  background-color:#FDDCC4;
+}
 
 .footer {
   display: flex;
@@ -617,9 +620,6 @@ button:hover {
   margin: auto;
   /* padding: 40px 0; */
 }
-/* .friends__img__wrapper {
-  overflow: hidden;
-} */
 .pet__card {
   margin: 0 20px; 
   order: 2; 
@@ -706,6 +706,9 @@ button:hover {
   width: 380px;
   min-height: 282px;
   margin: 1px 15px;
+}
+.donation__card:hover {
+  background-color:#FDDCC4;
 }
 .footer {
   display: flex;
@@ -1023,6 +1026,9 @@ button:hover {
   font-size: 15px;
   line-height: 110%;
   letter-spacing: 0.06rem;
+}
+.donation__card:hover {
+  background-color:#FDDCC4;
 }
 .donation__info {
   color:#B2B2B2;

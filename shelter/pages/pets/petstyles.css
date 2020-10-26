@@ -40,6 +40,9 @@
     line-height: 110%;
     letter-spacing: 0.06rem;
   }
+  a {
+    text-decoration: none;
+  }
   .visually-hidden {
     position: absolute;
     white-space: nowrap;
