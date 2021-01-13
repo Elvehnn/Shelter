@@ -18,10 +18,11 @@
               <div class="logo-subtitle">Shelter for pets in Boston</div>
             </div>
           </a>
+          <div class="nav__btn"></div>
           <nav class="menu">
             <ul class="menu-list">
               <li class="menu-item"><a href="..\..\pages\main\main.html" class="item_link item_link_disabled">About the shelter</a></li>
-              <li class="menu-item"><a href="#" class="item_link item_link_active">Our pets</a></li>
+              <li class="menu-item"><a href="..\..\pages\pets\index.html" class="item_link item_link_active">Our pets</a></li>
               <li class="menu-item"><a href="#" class="item_link item_link_disabled">Help the shelter</a></li>
               <li class="menu-item"><a href="#" class="item_link item_link_disabled">Contacts</a></li>
             </ul>
@@ -33,13 +34,13 @@
         <section class="pets">
           <div class="pets__wrapper">
             <h3 class="pets__title"> Our friends who <br>are looking for a house</h3>
-            <div class="cards__container">
-              <div class="pet__card">
+            <div class="cards__container" id="cards">
+              <div class="pet__card" id="pet__card">
                 <div class="pet__picture"><img src="..\..\assets\pets-katrine.png" alt="katrine"></div>
                 <p class="pet__card__title">Katrine</p>
-                <button type="button" class="pet__card__button">Learn more</button>
+                <button type="button" class="pet__card__button" id="pet__card__button">Learn more</button>
               </div>
-              <div class="pet__card">
+              <!--<div class="pet__card">
                 <div class="pet__picture"><img src="..\..\assets\pets-jennifer.png" alt="pets-jennifer"></div>
                 <p class="pet__card__title">Jennifer</p>
                 <button type="button" class="pet__card__button">Learn more</button>
@@ -73,14 +74,17 @@
                 <div class="pet__picture"><img src="..\..\assets\pets-freddie.png" alt="pets-freddie"></div>
                 <p class="pet__card__title">Freddie</p>
                 <button type="button" class="pet__card__button">Learn more</button>
-              </div>
+              </div>-->
             </div>
+            <!-- <div class="pet__hidden" id="pet__hidden">
+
+            </div> -->
             <nav class="pets__nav__bar">
-                <button type="button" class="pets__nav__button nav__disabled" disabled>&lt;&lt;</button>
-                <button type="button" class="pets__nav__button nav__disabled" disabled>&lt;</button>
-                <button type="button" class="pets__nav__button page__number">1</button>
-                <button type="button" class="pets__nav__button nav__active">&gt;</button>
-                <button type="button" class="pets__nav__button nav__active">&gt;&gt;</button>
+                <button type="button" class="pets__nav__button first__page nav__disabled" id="first__page" disabled>&lt;&lt;</button>
+                <button type="button" class="pets__nav__button prev__page nav__disabled" id="prev__page" disabled>&lt;</button>
+                <button type="button" class="pets__nav__button page__number" id="curr__page">1</button>
+                <button type="button" class="pets__nav__button nav__active next__page" id="next__page">&gt;</button>
+                <button type="button" class="pets__nav__button nav__active last__page"id="last__page">&gt;&gt;</button>
             </nav>
               
             </div>
@@ -118,4 +122,32 @@
           </div>
         </div>
       </footer>
+      <div class="popup" id="popup">
+        <div class="popup__close" id="popup__close">
+          <img src="../../assets/icons/x.svg" alt="close" id="x__close">
+        </div>
+        <div class="popup__container">
+          <img class="popup__img" src="..\..\assets\pets-jennifer.png" alt="pet">
+        </div>
+        <div class="popup__row">
+          <div class="popup__head">
+            <div class="popup__title">Jennifer</div>
+            <div class="popup__sub">Dog - Labrador</div>
+          </div>
+          <p class="popup__text">Jennifer is a sweet 2 months old Labrador that is patiently waiting 
+            to find a new forever home. This girl really enjoys being able to go outside to run and play,
+             but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+             <ul class="popup__info">
+              <li class="popup__item"><span><b>Age:</b> 2 months</span></li>
+              <li class="popup__item"><span><b>Inoculations:</b> none</span></li>
+              <li class="popup__item"><span><b>Diseases:</b> none</span></li>
+              <li class="popup__item"><span><b>Parasites:</b> none</span></li>
+            </ul>
+          </div>
+      </div> 
+      <div class="shadow"></div>
+   <!-- <script src="https://code.s3.yandex.net/web-code/smoothly.js"></script> -->
+   <script src="index.js"></script>  
+  </body>
+</html>
         
