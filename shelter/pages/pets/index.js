@@ -115,18 +115,6 @@ const createElements = (petsList) => {
     return str;
   };
   
-  // function fadeOut(el) {
-  //   let opacity = 1;
-  //   let timer = setInterval(function() {
-  //     if (opacity <= 0.1) {
-  //       clearInterval(timer);
-  //       el.style.display = "none";
-  //     }
-  //     el.style.opacity = opacity;
-  //     opacity -= opacity * 0.1;
-  //   }, 3);
-  // }
-
   function fadeIn(el) {
     let opacity = 0.01;
     // el.style.display = "block";//
@@ -141,27 +129,6 @@ const createElements = (petsList) => {
 
   //сортировка "восьмерок", "шестерок" и "троек". "тройки" кратны "шестеркам", поэтому в них уже отсортировано//
   const sort863 = (list) => {
-    //сортировка "восьмерок"
-    // let unique8List = [];
-    // let length = list.length;
-    // for (let i = 0; i < length / 8; i++) {
-    //   const uniqueStepList = [];
-    //   for (let j = 0; j < list.length; j++) {
-    //     if (uniqueStepList.length >= 8) {
-    //       break;
-    //     }
-    //     const isUnique = !uniqueStepList.some((item) => {
-    //       return item.name === list[j].name;
-    //     });
-    //     if (isUnique) {
-    //       uniqueStepList.push(list[j]);
-    //       list.splice(j, 1);
-    //       j--;
-    //     }
-    //   }
-    //   unique8List = [...unique8List, ...uniqueStepList];
-    // }
-    // list = unique8List;
     list = sort6recursively(list);
     return list;
   }
